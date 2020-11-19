@@ -44,6 +44,7 @@ public class MailUtil {
 	public static void sendEmail(String email, String subject, String body) throws UnsupportedEncodingException {
 		try {
 			Properties props = new Properties();
+			props.put("mail.smtp.ssl.enable", "true")
 			props.put("mail.transport.protocol", protocol);
 			props.put("mail.smtp.auth", true);
 			props.put("mail.smtp.port", 465);

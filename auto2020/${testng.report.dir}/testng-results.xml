@@ -11,12 +11,12 @@
       <![CDATA[lctest4]]>
     </line>
   </reporter-output>
-  <suite name="s1" duration-ms="34" started-at="2020-11-19T12:09:15 CST" finished-at="2020-11-19T12:09:15 CST">
+  <suite name="s1" duration-ms="18" started-at="2020-11-19T12:19:28 CST" finished-at="2020-11-19T12:19:28 CST">
     <groups>
     </groups>
-    <test name="test1" duration-ms="34" started-at="2020-11-19T12:09:15 CST" finished-at="2020-11-19T12:09:15 CST">
+    <test name="test1" duration-ms="18" started-at="2020-11-19T12:19:28 CST" finished-at="2020-11-19T12:19:28 CST">
       <class name="com.webtest.demo.FreeMarker">
-        <test-method status="FAIL" signature="test3()[pri:0, instance:com.webtest.demo.FreeMarker@6a024a67]" name="test3" duration-ms="0" started-at="2020-11-19T12:09:15 CST" finished-at="2020-11-19T12:09:15 CST">
+        <test-method status="FAIL" signature="test3()[pri:0, instance:com.webtest.demo.FreeMarker@6a024a67]" name="test3" duration-ms="0" started-at="2020-11-19T12:19:28 CST" finished-at="2020-11-19T12:19:28 CST">
           <exception class="java.lang.AssertionError">
             <message>
               <![CDATA[expected [1] but found [13]]]>
@@ -62,28 +62,28 @@ at org.testng.TestNG.main(TestNG.java:1304)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- test3 -->
-        <test-method status="PASS" signature="test2()[pri:0, instance:com.webtest.demo.FreeMarker@6a024a67]" name="test2" duration-ms="0" started-at="2020-11-19T12:09:15 CST" finished-at="2020-11-19T12:09:15 CST">
+        <test-method status="PASS" signature="test2()[pri:0, instance:com.webtest.demo.FreeMarker@6a024a67]" name="test2" duration-ms="0" started-at="2020-11-19T12:19:28 CST" finished-at="2020-11-19T12:19:28 CST">
           <reporter-output>
             <line>
               <![CDATA[lctest2]]>
             </line>
           </reporter-output>
         </test-method> <!-- test2 -->
-        <test-method status="PASS" signature="test1()[pri:0, instance:com.webtest.demo.FreeMarker@6a024a67]" name="test1" duration-ms="0" started-at="2020-11-19T12:09:15 CST" finished-at="2020-11-19T12:09:15 CST">
+        <test-method status="PASS" signature="test1()[pri:0, instance:com.webtest.demo.FreeMarker@6a024a67]" name="test1" duration-ms="0" started-at="2020-11-19T12:19:28 CST" finished-at="2020-11-19T12:19:28 CST">
           <reporter-output>
             <line>
               <![CDATA[lctest1]]>
             </line>
           </reporter-output>
         </test-method> <!-- test1 -->
-        <test-method status="PASS" signature="test4()[pri:0, instance:com.webtest.demo.FreeMarker@6a024a67]" name="test4" duration-ms="0" started-at="2020-11-19T12:09:15 CST" finished-at="2020-11-19T12:09:15 CST">
+        <test-method status="PASS" signature="test4()[pri:0, instance:com.webtest.demo.FreeMarker@6a024a67]" name="test4" duration-ms="0" started-at="2020-11-19T12:19:28 CST" finished-at="2020-11-19T12:19:28 CST">
           <reporter-output>
             <line>
               <![CDATA[lctest4]]>
             </line>
           </reporter-output>
         </test-method> <!-- test4 -->
-        <test-method status="FAIL" signature="test5()[pri:0, instance:com.webtest.demo.FreeMarker@6a024a67]" name="test5" duration-ms="0" started-at="2020-11-19T12:09:15 CST" finished-at="2020-11-19T12:09:15 CST">
+        <test-method status="FAIL" signature="test5()[pri:0, instance:com.webtest.demo.FreeMarker@6a024a67]" name="test5" duration-ms="0" started-at="2020-11-19T12:19:28 CST" finished-at="2020-11-19T12:19:28 CST">
           <exception class="java.lang.AssertionError">
             <message>
               <![CDATA[expected [11] but found [13]]]>
@@ -129,7 +129,7 @@ at org.testng.TestNG.main(TestNG.java:1304)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- test5 -->
-        <test-method status="FAIL" signature="test6()[pri:0, instance:com.webtest.demo.FreeMarker@6a024a67]" name="test6" duration-ms="0" started-at="2020-11-19T12:09:15 CST" finished-at="2020-11-19T12:09:15 CST">
+        <test-method status="FAIL" signature="test6()[pri:0, instance:com.webtest.demo.FreeMarker@6a024a67]" name="test6" duration-ms="0" started-at="2020-11-19T12:19:28 CST" finished-at="2020-11-19T12:19:28 CST">
           <exception class="java.lang.AssertionError">
             <message>
               <![CDATA[expected [12] but found [13]]]>

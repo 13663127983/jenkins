@@ -46,6 +46,7 @@ public class MailUtil {
 			Properties props = new Properties();
 			props.put("mail.transport.protocol", protocol);
 			props.put("mail.smtp.auth", true);
+			props.put("mail.smtp.port", 465);
 			props.put("mail.smtp.host", server);
 			
 			Session session=Session.getInstance(props, new Authenticator() {

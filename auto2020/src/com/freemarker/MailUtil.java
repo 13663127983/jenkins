@@ -43,7 +43,7 @@ public class MailUtil {
 		
 	}
 
-	public static void sendEmail(String email, String subject, String body) throws UnsupportedEncodingException, GeneralSecurityException {
+	public static void sendEmail(String email, String subject, String body) throws UnsupportedEncodingException {
 		try {
 			Properties props = new Properties();
 			props.put("mail.smtp.ssl.enable", "true");
@@ -51,9 +51,16 @@ public class MailUtil {
 			props.put("mail.smtp.auth", true);
 			props.put("mail.smtp.port", 465);
 			props.put("mail.smtp.host", server);
-			MailSSLSocketFactory sf = new MailSSLSocketFactory();
-	        sf.setTrustAllHosts(true);
-	        props.put("mail.smtp.ssl.socketFactory", sf);
+			MailSSLSocketFactory sf;
+			try {
+				sf = new MailSSLSocketFactory();
+				sf.setTrustAllHosts(true);
+			    props.put("mail.smtp.ssl.socketFactory", sf);
+			} catch (GeneralSecurityException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+	      
 			
 			Session session=Session.getInstance(props, new Authenticator() {
 

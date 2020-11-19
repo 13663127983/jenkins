@@ -378,7 +378,7 @@ public class WebDriverEngine {
 		List<String> windows = new ArrayList<String>();
 		for (String handle : driver.getWindowHandles())
 		{
-			//System.out.println(handle);  //杩涘叆鍒扮浜屼釜椤甸潰
+			//System.out.println(handle);  
 			windows.add(handle);
 		}
 		driver.switchTo().window(windows.get(i));

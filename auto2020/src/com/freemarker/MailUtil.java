@@ -2,6 +2,7 @@ package com.freemarker;
 
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
+import java.security.GeneralSecurityException;
 import java.util.Date;
 import java.util.Properties;
 
@@ -15,6 +16,7 @@ import javax.mail.Transport;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
 
+import com.sun.mail.util.MailSSLSocketFactory;
 import com.webtest.utils.ReadProperties;
 
 import net.sf.saxon.functions.StaticBaseURI;
@@ -41,7 +43,7 @@ public class MailUtil {
 		
 	}
 
-	public static void sendEmail(String email, String subject, String body) throws UnsupportedEncodingException {
+	public static void sendEmail(String email, String subject, String body) throws UnsupportedEncodingException, GeneralSecurityException {
 		try {
 			Properties props = new Properties();
 			props.put("mail.smtp.ssl.enable", "true");
@@ -49,6 +51,9 @@ public class MailUtil {
 			props.put("mail.smtp.auth", true);
 			props.put("mail.smtp.port", 465);
 			props.put("mail.smtp.host", server);
+			MailSSLSocketFactory sf = new MailSSLSocketFactory();
+	        sf.setTrustAllHosts(true);
+	        props.put("mail.smtp.ssl.socketFactory", sf);
 			
 			Session session=Session.getInstance(props, new Authenticator() {
 

@@ -2,7 +2,7 @@ package com.freemarker;
 
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
-import java.security.GeneralSecurityException;
+import java.security.Security;
 import java.util.Date;
 import java.util.Properties;
 
@@ -16,10 +16,9 @@ import javax.mail.Transport;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
 
-import com.sun.mail.util.MailSSLSocketFactory;
 import com.webtest.utils.ReadProperties;
 
-import net.sf.saxon.functions.StaticBaseURI;
+
 
 public class MailUtil {
 	static String server;
@@ -45,22 +44,25 @@ public class MailUtil {
 
 	public static void sendEmail(String email, String subject, String body) throws UnsupportedEncodingException {
 		try {
+			
 			Properties props = new Properties();
-			props.put("mail.smtp.ssl.enable", "true");
 			props.put("mail.transport.protocol", protocol);
 			props.put("mail.smtp.auth", true);
-			props.put("mail.smtp.port", 465);
+			props.put("mail.smtp.port", 994);
 			props.put("mail.smtp.host", server);
-			MailSSLSocketFactory sf;
-			try {
-				sf = new MailSSLSocketFactory();
-				sf.setTrustAllHosts(true);
-			    props.put("mail.smtp.ssl.socketFactory", sf);
-			} catch (GeneralSecurityException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-	      
+			//props.setProperty("mail.smtp.socketFactory.port", "465");
+			props.setProperty("mail.smtp.socketFactory.class", "javax.net.ssl.SSLSocketFactory");
+			props.setProperty("mail.smtp.socketFactory.fallback", "false");
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
 			
 			Session session=Session.getInstance(props, new Authenticator() {
 

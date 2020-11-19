@@ -23,5 +23,7 @@
 	<classpathentry kind="lib" path="libs/saxon-8.7.jar"/>
 	<classpathentry kind="lib" path="libs/SaxonLiaison.jar"/>
 	<classpathentry kind="lib" path="libs/org.testng_7.1.0.r202001120626.jar"/>
+	<classpathentry kind="lib" path="libs/tools.jar"/>
+	<classpathentry kind="lib" path="libs/jsse-2.1.0.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

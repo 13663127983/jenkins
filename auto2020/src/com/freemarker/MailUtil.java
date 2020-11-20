@@ -48,11 +48,8 @@ public class MailUtil {
 			Properties props = new Properties();
 			props.put("mail.transport.protocol", protocol);
 			props.put("mail.smtp.auth", true);
-			props.put("mail.smtp.port", 994);
+			props.put("mail.smtp.port", 25);
 			props.put("mail.smtp.host", server);
-			//props.setProperty("mail.smtp.socketFactory.port", "465");
-			props.setProperty("mail.smtp.socketFactory.class", "javax.net.ssl.SSLSocketFactory");
-			props.setProperty("mail.smtp.socketFactory.fallback", "false");
 			
 			
 			

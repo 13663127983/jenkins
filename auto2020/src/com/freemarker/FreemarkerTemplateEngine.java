@@ -11,7 +11,7 @@ import freemarker.template.Template;
 public class FreemarkerTemplateEngine {
     private static final String DEFAULT_TEMPLATE = "reportTemplate.html";   
     public String getTemplatePath() {   
-        return "D:/java/workspace/auto2020/conf";   
+        return "./conf";     
     	
     }   
        

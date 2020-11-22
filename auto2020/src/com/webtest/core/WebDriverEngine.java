@@ -5,6 +5,7 @@ import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
 
@@ -27,7 +28,7 @@ import org.testng.annotations.Test;
 import com.webtest.utils.Log;
 import com.webtest.utils.ReadProperties;
 /**
- * author:lihuanzhen
+ * author:lichang
  
  */
 public class WebDriverEngine {
@@ -383,6 +384,45 @@ public class WebDriverEngine {
 		}
 		driver.switchTo().window(windows.get(i));
 	}
+	//自己添加的（黄）
+		public void switchToNewWindow(){
+			//得到当前句柄
+			String currentWindow = driver.getWindowHandle();
+		    //得到所有窗口的句柄
+		    Set<String> handles = driver.getWindowHandles(); 
+		    //排除当前窗口的句柄，则剩下是新窗口
+		    Iterator<String> it = handles.iterator();
+		    while(it.hasNext()){
+		        if(currentWindow == it.next())  continue;
+		        driver.switchTo().window(it.next());      
+		    }
+		}
+		//自己添加的（黄）
+		public void closeWindow() {
+	        try {
+	            String winHandleBefore = driver.getWindowHandle();//关闭当前窗口前，获取当前窗口句柄
+	            Set<String> winHandles = driver.getWindowHandles();//使用set集合获取所有窗口句柄
+	            driver.close();//关闭窗口
+	            Iterator<String> it = winHandles.iterator();//创建迭代器，迭代winHandles里的句柄
+	            while (it.hasNext()) {//用it.hasNext()判断时候有下一个窗口,如果有就切换到下一个窗口
+	                String win = it.next();//获取集合中的元素
+	                if (!win.equals(winHandleBefore)) { //如果此窗口不是关闭前的窗口
+	                    driver.switchTo().window(win);//切换到新窗口
+	                    break;
+	                }
+	            }
+	        } catch (Exception e) {
+	            e.printStackTrace();
+	        }
+	    }
+		
+		//自己添加的（黄）
+		public void exectueScript(String locator) {
+			String js3 = "arguments[0].scrollIntoView();";
+			WebElement element = finder.findElement(locator);
+			((JavascriptExecutor) driver).executeScript(js3, element);
+
+		}
 
 
 

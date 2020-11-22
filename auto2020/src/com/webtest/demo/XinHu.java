@@ -1,14 +1,15 @@
 package com.webtest.demo;
 
-import java.util.List;
 
-import org.openqa.selenium.WebElement;
+
+
 import org.testng.Assert;
-import org.testng.annotations.BeforeClass;
+
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import com.webtest.core.BaseTest;
+import com.webtest.dataprovider.NSDataProvider;
 /*
  * @author 刘畅
  * 	testcase number:50
@@ -20,11 +21,9 @@ public class XinHu extends BaseTest {
 	@BeforeMethod
 	public void login() throws InterruptedException {
 		webtest.open("http://127.0.0.1:81/?m=index");
-		webtest.clear("name=adminuser");
 		webtest.type("name=adminuser", "admin");
 		webtest.type("xpath=//input[@type='password']", "123456");
 		webtest.click("name=button");
-
 	}
 
 	// 个人资料，选择一条记录，点击编辑，将学历改为本科，点击保存，保存成功1

@@ -23,7 +23,7 @@ public class SeleniumScreenShot {
 		String nowDateTime = sdf.format(new Date());
 
 		File s_file = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
-		Files.copy(s_file, new File("D:\\AD\\" + nowDateTime + ".jpg"));
+		Files.copy(s_file, new File("C:\\AD\\" + nowDateTime + ".jpg"));
 	
 	}
 

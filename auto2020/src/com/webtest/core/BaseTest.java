@@ -47,7 +47,6 @@ public class BaseTest {
 		    String firefox_driver =ReadProperties.getPropertyValue("gecko_driver");
 			String firefox_path = ReadProperties.getPropertyValue("firefox_path");
 			System.setProperty("webdriver.gecko.driver", firefox_driver);
-			System.setProperty("webdriver.firefox.bin", firefox_path);
 			driver = new FirefoxDriver();
 	
 			Log.info("Using Firefox");

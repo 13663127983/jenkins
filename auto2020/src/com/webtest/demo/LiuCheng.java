@@ -25,6 +25,7 @@ public class LiuCheng extends BaseTest {
 		webtest.type("name=adminuser", "admin");
 		webtest.type("xpath=//input[@type='password']", "123456");
 		webtest.click("name=button");
+		webtest.click("xpath=//span[text()='流程']");
 
 	}
 

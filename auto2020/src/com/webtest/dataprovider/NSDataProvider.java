@@ -45,13 +45,13 @@ public class NSDataProvider {
 //		
 //	}
 	
-	@DataProvider(name="xinhu")
+	@DataProvider(name="xinhu1")
 	public Object[][] getExcelkData1() throws IOException{
 		return new ExcelDataProvider().getTestDataByExcel("data/xinhu.xlsx", "Sheet1");
 		
 	}
 	
-	@DataProvider(name="xinhu1")
+	@DataProvider(name="xinhu2")
 	public Object[][] getExcelkData2() throws IOException{
 		return new ExcelDataProvider().getTestDataByExcel("data/xinhu.xlsx", "Sheet2");
 		

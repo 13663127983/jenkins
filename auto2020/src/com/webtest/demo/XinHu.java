@@ -112,7 +112,7 @@ public class XinHu extends BaseTest {
 	}
 
 	// 个人通讯录，新增7(数据驱动excel)
-	@Test(dataProvider = "xinhu", dataProviderClass = NSDataProvider.class)
+	@Test(dataProvider = "xinhu1", dataProviderClass = NSDataProvider.class)
 	public void addPerson(String s1, String s2, String s3) throws InterruptedException {
 		webtest.click(webtest.getLocator("xpath=//div[@class='menuone']").get(0));
 		webtest.click(webtest.getLocator("xpath=//div[@class='menutwo']").get(4));

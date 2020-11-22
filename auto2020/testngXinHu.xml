@@ -9,6 +9,11 @@
 	<test name="test1">
 			<classes>
 			<class name="com.webtest.demo.XinHu" />
+			<class name="com.webtest.demo.LiuCheng" />
+			<class name="com.webtest.demo.ZiYuan" />
+			<class name="com.webtest.demo.RenWu" />
+			<class name="com.webtest.demo.KeHu" />
+			<class name="com.webtest.demo.XingZheng" />
 		</classes>
 	</test>
 	

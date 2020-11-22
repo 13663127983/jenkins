@@ -9,12 +9,18 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import com.webtest.core.BaseTest;
+/*
+ * @author 刘畅
+ * 	testcase number:50
+ * status:success
+ */
 
 public class XinHu extends BaseTest {
 
 	@BeforeMethod
 	public void login() throws InterruptedException {
-		webtest.open("http://127.0.0.1:8866/xinhu_utf8_v1.5.9/?m=index");
+		webtest.open("http://127.0.0.1:81/?m=index");
+		webtest.clear("name=adminuser");
 		webtest.type("name=adminuser", "admin");
 		webtest.type("xpath=//input[@type='password']", "123456");
 		webtest.click("name=button");
@@ -106,15 +112,16 @@ public class XinHu extends BaseTest {
 
 	}
 
-	// 个人通讯录，新增7
-	@Test
-	public void addPerson() throws InterruptedException {
+	// 个人通讯录，新增7(数据驱动excel)
+	@Test(dataProvider = "xinhu", dataProviderClass = NSDataProvider.class)
+	public void addPerson(String s1, String s2, String s3) throws InterruptedException {
 		webtest.click(webtest.getLocator("xpath=//div[@class='menuone']").get(0));
 		webtest.click(webtest.getLocator("xpath=//div[@class='menutwo']").get(4));
 		webtest.click("xpath=//button[contains(text(),'新增')]");
 		webtest.enterFrame1("name=openinputiframe");
-		webtest.type("name=name", "刘畅");
-		webtest.selectByValue("name=sex", "男");
+		webtest.type("name=name", s1);
+		webtest.selectByValue("name=sex", s2);
+		webtest.type("name=mobile", s3);
 		webtest.click("id=AltS");
 		webtest.leaveFrame();
 		Assert.assertTrue(webtest.isDisplayed("xpath=//div[contains(text(),'新增保存成功')]"));

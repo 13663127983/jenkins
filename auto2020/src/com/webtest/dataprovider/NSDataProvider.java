@@ -39,11 +39,25 @@ public class NSDataProvider {
 //	}
 //	
 	
-	@DataProvider(name="travel")
-	public Object[][] getTxtData1() throws IOException{
-		return new TxtDataProvider().getTxtUser("D:\\java\\workspace\\auto2020\\file.txt");
+//	@DataProvider(name="travel")
+//	public Object[][] getTxtData1() throws IOException{
+//		return new TxtDataProvider().getTxtUser("D:\\java\\workspace\\auto2020\\file.txt");
+//		
+//	}
+	
+	@DataProvider(name="xinhu")
+	public Object[][] getExcelkData1() throws IOException{
+		return new ExcelDataProvider().getTestDataByExcel("data/xinhu.xlsx", "Sheet1");
 		
 	}
+	
+	@DataProvider(name="xinhu1")
+	public Object[][] getExcelkData2() throws IOException{
+		return new ExcelDataProvider().getTestDataByExcel("data/xinhu.xlsx", "Sheet2");
+		
+	}
+	
+	
 	
 	
 }

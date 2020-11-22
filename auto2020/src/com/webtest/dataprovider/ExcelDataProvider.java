@@ -9,6 +9,7 @@ import java.util.List;
 
 
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
+import org.apache.poi.ss.usermodel.CellType;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
@@ -41,6 +42,7 @@ public class ExcelDataProvider {
 			Row row = sheet.getRow(i);
 			String fields[] = new String[row.getLastCellNum()];
 			for (int j = 0; j < row.getLastCellNum(); j++) {
+				row.getCell(j).setCellType(CellType.STRING);
 				fields[j] = row.getCell(j).getStringCellValue();
 			}
 			records.add(fields);

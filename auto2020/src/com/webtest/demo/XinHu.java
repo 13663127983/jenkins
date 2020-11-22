@@ -45,7 +45,7 @@ public class XinHu extends BaseTest {
 		webtest.click("xpath=//button[@click='edit']");
 		webtest.enterFrame1("name=openinputiframe");
 		// webtest.runJs("document.getElementsByName('zhaopian')[0].removeAttribute('type')");
-		webtest.type("id=filed_zhaopian_inp", "D:\\AD\\g.jpg");
+		webtest.type("id=filed_zhaopian_inp", "C:\\AD\\g.jpg");
 		webtest.click("id=AltS");
 		webtest.leaveFrame();
 		Assert.assertTrue(webtest.isDisplayed("xpath=//div[text()='编辑保存成功']"));
@@ -658,7 +658,7 @@ public class XinHu extends BaseTest {
 		webtest.click("xpath=//a[contains(text(),'操作')]");
 		webtest.click("xpath=//li[contains(text(),'点评')]");
 		webtest.type("id=confirm_input", "点评一下");
-		webtest.type("xpath=//input[starts-with(@id,'showfielsv_')]", "D:\\ad\\g.jpg");
+		webtest.type("xpath=//input[starts-with(@id,'showfielsv_')]", "C:\\ad\\g.jpg");
 		webtest.click("id=confirm_btn1");
 		Assert.assertTrue(webtest.isDisplayed("xpath=//div[contains(text(),'处理成功')]"));
 	}

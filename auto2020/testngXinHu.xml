@@ -8,7 +8,7 @@
 
 	<test name="test1">
 			<classes>
-			<class name="com.webtest.demo.FreeMarker" />
+			<class name="com.webtest.demo.XinHu" />
 		</classes>
 	</test>
 	

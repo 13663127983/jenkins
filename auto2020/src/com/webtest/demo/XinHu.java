@@ -201,24 +201,14 @@ public class XinHu extends BaseTest {
 
 	}
 
-	// 对个人通讯录第一个人进行编辑，将它的名字改为魑魅魍魉13
+	// 提醒消息设为已读，防止影响其他测试13
 	@Test
-	public void editInfo() throws InterruptedException {
-		webtest.click(webtest.getLocator("xpath=//div[@class='menuone']").get(0));
+	public void readedMail1() throws InterruptedException {
+		webtest.click("xpath=//a[contains(text(),'提醒信息')]");
+		webtest.click("xpath=//input[@type='checkbox']");
 		Thread.sleep(1000);
-		webtest.click(webtest.getLocator("xpath=//div[@class='menutwo']").get(4));
-		Thread.sleep(1000);
-		webtest.click("xpath=//a[contains(text(),'操作')]");
-		Thread.sleep(1000);
-		webtest.click("xpath=//li[contains(text(),'编辑')]");
-		webtest.enterFrame1("name=openinputiframe");
-		webtest.clear("name=name");
-		webtest.type("name=name", "魑魅魍魉");
-		webtest.click("id=AltS");
-		// 切换到原来的才可以断言到
-		webtest.leaveFrame();
-		Thread.sleep(1000);
-		Assert.assertTrue(webtest.isDisplayed("xpath=//td[contains(text(),'魑魅魍魉')]"));
+		webtest.click("xpath=//button[text()='标为已读']");
+		Assert.assertTrue(webtest.isDisplayed("xpath=//div[contains(text(),'处理成功')]"));
 
 	}
 
@@ -254,16 +244,7 @@ public class XinHu extends BaseTest {
 
 	}
 	
-	//提醒消息设为已读，防止影响其他测试
-		@Test
-		public void readedMail1() throws InterruptedException {
-			webtest.click("xpath=//a[contains(text(),'提醒信息')]");
-			webtest.click("xpath=//input[@type='checkbox']");
-			Thread.sleep(1000);
-			webtest.click("xpath=//button[text()='标为已读']");
-			Assert.assertTrue(webtest.isDisplayed("xpath=//div[contains(text(),'处理成功')]"));
-
-		}
+	
 
 	// 个人通讯录，编辑组，把第一个组名加上测试16
 	@Test

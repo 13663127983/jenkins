@@ -33,12 +33,23 @@ public class ZiYuan extends BaseTest {
 //	}
 
 	// 登录退出取消
-	@Test
+	@Test(dependsOnMethods = { "readedMail" })
 	public void test02() throws InterruptedException {
 		webtest.click("id=indexuserl");
 		webtest.click("xpath=//li[@temp='5']");
 		webtest.click("id=confirm_btn");
 		Assert.assertTrue(webtest.isTextPresent("资源"));
+	}
+	
+	//提醒消息设为已读，防止影响其他测试
+	@Test
+	public void readedMail() throws InterruptedException {
+		webtest.click("xpath=//a[contains(text(),'提醒信息')]");
+		webtest.click("xpath=//input[@type='checkbox']");
+		Thread.sleep(1000);
+		webtest.click("xpath=//button[text()='标为已读']");
+		Assert.assertTrue(webtest.isDisplayed("xpath=//div[contains(text(),'处理成功')]"));
+
 	}
 
 	// 个人文档预览

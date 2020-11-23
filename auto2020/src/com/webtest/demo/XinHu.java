@@ -238,7 +238,7 @@ public class XinHu extends BaseTest {
 	}
 
 	// 个人通讯录，新增组15
-	@Test
+	@Test(dependsOnMethods = { "readedMail1" })
 	public void addGroup() throws InterruptedException {
 		webtest.click(webtest.getLocator("xpath=//div[@class='menuone']").get(0));
 		Thread.sleep(1000);
@@ -253,6 +253,17 @@ public class XinHu extends BaseTest {
 		Assert.assertTrue(webtest.isTextPresent("python"));
 
 	}
+	
+	//提醒消息设为已读，防止影响其他测试
+		@Test
+		public void readedMail1() throws InterruptedException {
+			webtest.click("xpath=//a[contains(text(),'提醒信息')]");
+			webtest.click("xpath=//input[@type='checkbox']");
+			Thread.sleep(1000);
+			webtest.click("xpath=//button[text()='标为已读']");
+			Assert.assertTrue(webtest.isDisplayed("xpath=//div[contains(text(),'处理成功')]"));
+
+		}
 
 	// 个人通讯录，编辑组，把第一个组名加上测试16
 	@Test

@@ -73,7 +73,7 @@ public class LiuCheng extends BaseTest {
 		webtest.enterFrame1("xpath=//iframe[@name='openinputiframe']");
 		webtest.type("name=title", title);
 		webtest.selectByIndex("name=typename", 1);
-		webtest.type("id=filed_fengmian_inp", "C://AD//g.jpg");
+		webtest.type("id=filed_fengmian_inp", "C:\\AD\\g.jpg");
 
 		webtest.click("id=AltS");
 		webtest.leaveFrame();
@@ -328,7 +328,7 @@ public class LiuCheng extends BaseTest {
 		webtest.click("xpath=//input[starts-with(@name,'changeuserinput')]");
 		webtest.click("xpath=//input[starts-with(@id,'changeok')]");
 
-		webtest.type("id=filed_sealimg_inp", "C://AD//g.jpg");
+		webtest.type("id=filed_sealimg_inp", "C:\\AD\\g.jpg");
 
 		Thread.sleep(500);
 		webtest.click("id=AltS");
@@ -1191,15 +1191,5 @@ public class LiuCheng extends BaseTest {
 	}
 	
 	
-	//提醒消息设为已读，防止影响其他测试
-	@Test(priority=1)
-	public void readedMail() throws InterruptedException {
-		webtest.click(webtest.getLocator("xpath=//div[@class='menuone']").get(1));
-		Thread.sleep(1000);
-		webtest.click("xpath=//input[@type='checkbox']");
-		Thread.sleep(1000);
-		webtest.click("xpath=//button[text()='标识已读']");
-		Assert.assertTrue(webtest.isDisplayed("xpath=//div[contains(text(),'成功标识')]"));
-
-	}
+	
 }

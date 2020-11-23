@@ -26,7 +26,7 @@ public class KeHu extends BaseTest {
 	}
 
 	//选择一个我的客户，点击操作，点击详情，点击操作PV，点击编辑，删除用户名称，点击保存，显示用户名不能为空
-	@Test
+	@Test(dependsOnMethods = { "readedMail" })
 	public void test01() throws InterruptedException {
 		webtest.click("xpath=//span[text()='客户']");
 		webtest.click(webtest.getLocator("xpath=//div[@class='menuone']").get(1));
@@ -42,6 +42,17 @@ public class KeHu extends BaseTest {
 		Assert.assertTrue(webtest.isDisplayed("xpath=//span[@id='msgview']"));
 		webtest.leaveFrame();
 		Thread.sleep(500);
+	}
+	
+	//提醒消息设为已读，防止影响其他测试
+	@Test
+	public void readedMail() throws InterruptedException {
+		webtest.click("xpath=//a[contains(text(),'提醒信息')]");
+		webtest.click("xpath=//input[@type='checkbox']");
+		Thread.sleep(1000);
+		webtest.click("xpath=//button[text()='标为已读']");
+		Assert.assertTrue(webtest.isDisplayed("xpath=//div[contains(text(),'处理成功')]"));
+
 	}
 	
 	//选择一个我的客户，点击操作，点击详情，点击操作PV，点击编辑，修改用户名称，点击保存，保存成功

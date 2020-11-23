@@ -158,7 +158,7 @@ public class KeHu extends BaseTest {
 		webtest.clear("name=address");
 		webtest.click("xpath=//input[@type='button']");
 		webtest.leaveFrame();
-		Assert.assertTrue(webtest.isDisplayed("xpath=//span[@id='msgview']"));
+		Assert.assertFalse(webtest.isDisplayed("xpath=//span[@id='msgview']"));
 		Thread.sleep(500);
 	}	
 
@@ -482,7 +482,7 @@ public class KeHu extends BaseTest {
 		webtest.click("xpath=//input[@type='button']");
 		Thread.sleep(3500);
 		webtest.closeWindow();
-		Assert.assertTrue(webtest.isDisplayed("xpath=//span[text()='地址不能为空']"));
+		Assert.assertFalse(webtest.isDisplayed("xpath=//span[text()='地址不能为空']"));
 		webtest.leaveFrame();
 		Thread.sleep(500);
 	}	
@@ -787,7 +787,7 @@ public class KeHu extends BaseTest {
 		webtest.click("xpath=//li[text()='标☆']");
 		webtest.click("xpath=//button[@type='button']");
 		Thread.sleep(3500);
-		Assert.assertTrue(webtest.isDisplayed("xpath=//button[@type='button']"));
+		Assert.assertFalse(webtest.isDisplayed("xpath=//button[@type='button']"));
 		webtest.leaveFrame();
 		Thread.sleep(500);
 	}
@@ -862,7 +862,7 @@ public class KeHu extends BaseTest {
 		webtest.click("xpath=//li[text()='取消标☆']");
 		webtest.click("xpath=//button[@type='button']");
 		Thread.sleep(3500);
-		Assert.assertTrue(webtest.isDisplayed("xpath=//button[@type='button']"));
+		Assert.assertFalse(webtest.isDisplayed("xpath=//button[@type='button']"));
 		webtest.leaveFrame();
 		Thread.sleep(500);
 	}
@@ -931,7 +931,7 @@ public class KeHu extends BaseTest {
 		webtest.click("xpath=//li[text()='启用']");
 		webtest.click("xpath=//button[@type='button']");
 		Thread.sleep(3500);
-		Assert.assertTrue(webtest.isDisplayed("xpath=//button[@type='button']"));
+		Assert.assertFalse(webtest.isDisplayed("xpath=//button[@type='button']"));
 		Thread.sleep(500);
 	}
 	//	选择一个我停用客户，点击操作，点击启用，点击取消

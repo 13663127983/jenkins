@@ -355,7 +355,7 @@ public class ZiYuan extends BaseTest {
 			webtest.click("xpath=//i[@nodeclick='treenode_0']");
 			webtest.click("xpath=//i[@class='icon-trash']");
 			webtest.click("id=confirm_btn1");
-			Assert.assertTrue(webtest.isTextPresent("删除成功"));
+			Assert.assertTrue(webtest.isTextPresent("有下级分类不允许删除"));
 		}
 
 

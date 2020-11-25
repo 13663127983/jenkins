@@ -87,8 +87,8 @@ public class XingZheng extends BaseTest {
 			webtest.click("xpath=//button[starts-with(@id,'edit')]");
 			webtest.enterFrame1("name=openinputiframe");
 			webtest.type("name=name", "联想小新Air");
-//			webtest.click("name=unit");
-//			webtest.click("xpath=//option[@value='台']");
+			webtest.click("name=unit");
+			webtest.click("xpath=//option[@value='台']");
 			webtest.click("id=AltS");
 			webtest.leaveFrame();
 

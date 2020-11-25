@@ -73,7 +73,7 @@ public class LiuCheng extends BaseTest {
 		webtest.enterFrame1("xpath=//iframe[@name='openinputiframe']");
 		webtest.type("name=title", title);
 		webtest.selectByIndex("name=typename", 1);
-		webtest.type("id=filed_fengmian_inp", "C://AD/g.jpg");
+		webtest.type("id=filed_fengmian_inp", "C:\\ad\\g.jpg");
 
 		webtest.click("id=AltS");
 		webtest.leaveFrame();
@@ -328,7 +328,7 @@ public class LiuCheng extends BaseTest {
 		webtest.click("xpath=//input[starts-with(@name,'changeuserinput')]");
 		webtest.click("xpath=//input[starts-with(@id,'changeok')]");
 
-		webtest.type("id=filed_sealimg_inp", "C://AD/g.jpg");
+		webtest.type("id=filed_sealimg_inp", "C:\\ad\\g.jpg");
 
 		Thread.sleep(500);
 		webtest.click("id=AltS");

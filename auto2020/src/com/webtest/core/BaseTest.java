@@ -82,6 +82,15 @@ public class BaseTest {
 		driver.manage().window().maximize();
 		Log.info(driverType);
 		webtest = new WebDriverEngine(driver);
+		
+		webtest.open("http://127.0.0.1:81/?m=login");
+		webtest.clear("name=adminuser");
+		webtest.type("name=adminuser", "admin");
+		webtest.clear("xpath=//input[@type='password']");
+		webtest.type("xpath=//input[@type='password']", "123456");
+		webtest.click("name=button");
+		
+		
 	
 	
 	

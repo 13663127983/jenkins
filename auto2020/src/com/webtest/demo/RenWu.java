@@ -17,9 +17,6 @@ public class RenWu extends BaseTest{
 	@BeforeMethod
 	public void login() throws InterruptedException {
 		webtest.open("http://127.0.0.1:81/?m=index");
-		webtest.type("name=adminuser", "admin");
-		webtest.type("xpath=//input[@type='password']", "123456");
-		webtest.click("name=button");
 
 	}
 	//1.登录，点击任务，点击项目管理

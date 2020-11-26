@@ -21,9 +21,6 @@ public class XinHu extends BaseTest {
 	@BeforeMethod
 	public void login() throws InterruptedException {
 		webtest.open("http://127.0.0.1:81/?m=index");
-		webtest.type("name=adminuser", "admin");
-		webtest.type("xpath=//input[@type='password']", "123456");
-		webtest.click("name=button");
 	}
 
 	// 个人资料，选择一条记录，点击编辑，将学历改为本科，点击保存，保存成功1

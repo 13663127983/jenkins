@@ -56,6 +56,10 @@ public class NSDataProvider {
 		return new ExcelDataProvider().getTestDataByExcel("data/xinhu.xlsx", "Sheet2");
 		
 	}
+	@DataProvider(name="movie")
+	public  Object[][] getMovieData() throws IOException{
+		return new  ExcelDataProvider().getTestDataByExcel("data/xinhu.xlsx","Sheet3");
+	}
 	
 	
 	

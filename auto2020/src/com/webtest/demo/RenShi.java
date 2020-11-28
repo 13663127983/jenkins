@@ -11,8 +11,8 @@ public class RenShi extends BaseTest {
 	public void login() throws InterruptedException {
 		webtest.open("http://127.0.0.1:81/?m=index");
 	}
-	@Test
-	public void test1(){
+	@Test(dependsOnMethods = { "readedMail" })
+	public void test01(){
 		// 人员档案编辑测试
 		webtest.click("xpath=//span[text()='人事考勤']");
 		webtest.click("id=menu_down_isons_num84");
@@ -23,7 +23,7 @@ public class RenShi extends BaseTest {
 		// 进入编辑frame
 		webtest.enterFrame("openinputiframe");
 		// 添加图片
-		webtest.type("id=filed_zhaopian_inp", "C:\\AD\\g.jpg");
+		webtest.type("id=filed_zhaopian_inp", "D:\\AD\\g.jpg");
 		// 修改日期
 		webtest.click("name=workdate");
 		webtest.click("xpath=//td[@title='下一年']");
@@ -39,6 +39,17 @@ public class RenShi extends BaseTest {
 		webtest.leaveFrame();
 		assertTrue(webtest.isDisplayed("xpath=//div[contains(text(),'成功')]"));
 	}
+	
+	// 提醒消息设为已读，防止影响其他测试
+		@Test
+		public void readedMail() throws InterruptedException {
+			webtest.click("xpath=//a[contains(text(),'提醒信息')]");
+			webtest.click("xpath=//input[@type='checkbox']");
+			Thread.sleep(1000);
+			webtest.click("xpath=//button[text()='标为已读']");
+			Assert.assertTrue(webtest.isDisplayed("xpath=//div[contains(text(),'处理成功')]"));
+
+		}
 
 	@Test
 	public void test2() {
@@ -926,6 +937,7 @@ public class RenShi extends BaseTest {
 		webtest.clear("name=hgfen");
 		webtest.type("name=hgfen","60");
 		webtest.click("id=AltS");
+		webtest.leaveFrame();
 		assertTrue(webtest.isDisplayed("xpath=//div[contains(text(),'成功')]"));
 	}
 	@Test

@@ -47,7 +47,6 @@ public class RenShi extends BaseTest {
 			webtest.click("xpath=//input[@type='checkbox']");
 			Thread.sleep(1000);
 			webtest.click("xpath=//button[text()='标为已读']");
-			Assert.assertTrue(webtest.isDisplayed("xpath=//div[contains(text(),'处理成功')]"));
 
 		}
 

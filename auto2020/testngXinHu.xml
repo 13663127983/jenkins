@@ -9,7 +9,12 @@
 	<test name="test1">
 			<classes>
 			<class name="com.webtest.demo.RenShi" />
-			
+			<class name="com.webtest.demo.KeHu" />
+			<class name="com.webtest.demo.ZiYuan" />
+			<class name="com.webtest.demo.RenWu" />
+			<class name="com.webtest.demo.XinHu" />
+			<class name="com.webtest.demo.XingZheng" />
+			<class name="com.webtest.demo.LiuCheng" />
 		</classes>
 	</test>
 	

@@ -13,7 +13,8 @@ import com.webtest.dataprovider.NSDataProvider;
 /*
  * @author 刘畅
  * 	testcase number:50
- * status:success
+ *  status:success
+ *  个人办公模块
  */
 
 public class XinHu extends BaseTest {

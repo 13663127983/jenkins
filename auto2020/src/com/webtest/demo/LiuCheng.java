@@ -14,7 +14,8 @@ import com.webtest.dataprovider.NSDataProvider;
 /*
  * @author 白维扬
  * 	testcase number:50
- * status:success
+ *  status:success
+ *  流程模块
  */
 
 public class LiuCheng extends BaseTest {

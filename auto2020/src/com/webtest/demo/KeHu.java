@@ -10,7 +10,8 @@ import com.webtest.core.BaseTest;
 /*
  * @author 黄家承
  * 	testcase number:50
- * status:success
+ *  status:success
+ *  客户模块
  */
 
 public class KeHu extends BaseTest {

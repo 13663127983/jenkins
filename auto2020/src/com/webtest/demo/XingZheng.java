@@ -12,7 +12,8 @@ import com.webtest.core.BaseTest;
 /*
  * @author 吴汶航
  * 	testcase number:50
- * status:
+ *  status:success
+ *  行政模块
  */
 
 

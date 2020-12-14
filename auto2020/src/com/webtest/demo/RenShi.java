@@ -5,6 +5,12 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import com.webtest.core.BaseTest;
 import com.webtest.dataprovider.NSDataProvider;
+/*
+ * @author 邢煜焜
+ * 	testcase number:50
+ *  status:success
+ *  人事考勤模块
+ */
 
 public class RenShi extends BaseTest {
 	@BeforeMethod

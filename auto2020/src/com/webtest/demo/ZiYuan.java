@@ -8,7 +8,8 @@ import com.webtest.core.BaseTest;
 /*
  * @author 翟晓龙
  * 	testcase number:50
- * status:success
+ *  status:success
+ *  资源模块
  */
 
 public class ZiYuan extends BaseTest {
